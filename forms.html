@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1, h2 {
+            /* color: #C8102E; */
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(200, 16, 46, 0.3);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            margin: 5px;
+        }
+        
+        th {
+            background-color: #C8102E;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 10px;
+            border-bottom:none;
+        }
+        
+        .section-header {
+            width: 98%;
+            background-color: #C8102E;
+            color: #FFFFFF;
+            padding: 10px;
+            margin-top: 20px;
+            /* border-radius: 5px; */
+        }
+        
+        input[type="text"], 
+        input[type="email"], 
+        input[type="tel"],
+        input[type="datetime-local"],
+        textarea, 
+        select {
+            width: 100%;
+            max-width: 90%;
+            padding: 8px;
+            border: 1px solid #C8102E;
+            border-radius: 4px;
+            background-color: #FFFFFF;
+            color: #333333;
+        }
+        
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            background-color: #C8102E;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        
+        .btn:hover {
+            background-color: #9B0C24;
+        }
+        
+        .quantity-input {
+            width: 60px;
+        }
+        
+        .option-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Form</h1>
+        
+        <form action="#" method="post">
+            <!-- Customer Information Section -->
+            <div class="section-header">
+                <h2>Customer Information</h2>
+            </div>
+            
+            <table>
+                <tr>
+                    <td><label for="fullname">Full name:</label></td>
+                    <td><input type="text" name="fullname" id="fullname" placeholder="Your name here"></td>
+                </tr>
+                <tr>
+                  <td><label for="address">Complete Address:</label></td>
+                  <td><input type="text" name="address" id="address" placeholder="Address"></td>
+                </tr>
+                <tr>
+                  <td><label for="phone">Contact:</label></td>
+                    <td><input type="tel" name="phone" id="phone" placeholder="Phone number"required></td>
+                </tr>
+                <tr>
+                  <td><label for="email">Email Address:</label></td>
+                    <td><input type="email" name="email" id="email" placeholder="Email Address"></td>
+                </tr>
+                <tr>
+                  <td><label for="directions"> Directions to your place:</label></td>
+                  <td><textarea name="directions" id="directions" placeholder="How to get in your area"></textarea></td>
+              </tr>
+                <tr>
+                    <td><label for="datetime-local">Date and Time:</label></td>
+                    <td><input type="datetime-local" name="datetime-local" id="datetime-local" required></td>
+                </tr>
+                
+            </table>
+            
+            <!-- Order Form Section -->
+            <div class="section-header">
+                <h2>Order Details</h2>
+            </div>
+            
+            <!-- Burgers Section -->
+            <table>
+                <tr>
+                    <th colspan="2">Burgers</th>
+                </tr>
+                <tr>
+                    <td>Patty Type:</td>
+                    <td>
+                        <div class="option-group">
+                            <input type="radio" name="patty" id="single" value="single" checked>
+                            <label for="single">Single Patty</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="radio" name="patty" id="double" value="double">
+                            <label for="double">Double Patty</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Toppings:</td>
+                    <td>
+                        <div class="option-group">
+                            <input type="checkbox" name="toppings" id="cheese" value="cheese">
+                            <label for="cheese">Cheese</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="checkbox" name="toppings" id="coleslaw" value="coleslaw">
+                            <label for="coleslaw">Coleslaw</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="checkbox" name="toppings" id="tomato" value="tomato">
+                            <label for="tomato">Tomato</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="checkbox" name="toppings" id="onion" value="onion">
+                            <label for="onion">Onion</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="checkbox" name="toppings" id="cucumber" value="cucumber">
+                            <label for="cucumber">Cucumber</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="checkbox" name="toppings" id="bacon" value="bacon">
+                            <label for="bacon">Bacon</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Choice of Bun:</td>
+                    <td>
+                        <select name="bun">
+                            <option value="white">White Bun</option>
+                            <option value="wheat">Wheat Bun</option>
+                            <option value="honey_oat">Honey Oat</option>
+                            <option value="sugar_free">Sugar-Free</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quantity:</td>
+                    <td><input type="number" name="burger_qty" min="0" value="0" class="quantity-input"></td>
+                </tr>
+            </table>
+            
+            <!-- Pasta Section -->
+            <table>
+                <tr>
+                    <th colspan="2">Pasta</th>
+                </tr>
+                <tr>
+                    <td>Sauce:</td>
+                    <td>
+                        <select name="pasta_sauce">
+                            <option value="carbonara">Carbonara</option>
+                            <option value="pesto">Pesto</option>
+                            <option value="spaghetti">Spaghetti</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Add-ons:</td>
+                    <td>
+                        <div class="option-group">
+                            <input type="checkbox" name="pasta_addons" id="extra_cheese" value="extra_cheese">
+                            <label for="extra_cheese">Extra Cheese</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="checkbox" name="pasta_addons" id="extra_sauce" value="extra_sauce">
+                            <label for="extra_sauce">Extra Sauce</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quantity:</td>
+                    <td><input type="number" name="pasta_qty" min="0" value="0" class="quantity-input"></td>
+                </tr>
+            </table>
+            
+            <!-- Fries Section -->
+            <table>
+                <tr>
+                    <th colspan="2">Fries</th>
+                </tr>
+                <tr>
+                    <td>Size:</td>
+                    <td>
+                        <div class="option-group">
+                            <input type="radio" name="fries_size" id="small" value="small" checked>
+                            <label for="small">Small</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="radio" name="fries_size" id="medium" value="medium">
+                            <label for="medium">Medium</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="radio" name="fries_size" id="large" value="large">
+                            <label for="large">Large</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Flavor:</td>
+                    <td>
+                        <select name="fries_flavor">
+                            <option value="regular">Regular</option>
+                            <option value="bbq">BBQ</option>
+                            <option value="cheese">Cheese</option>
+                            <option value="sour_cream">Sour Cream</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quantity:</td>
+                    <td><input type="number" name="fries_qty" min="0" value="0" class="quantity-input"></td>
+                </tr>
+            </table>
+            
+            <!-- Drinks Section -->
+            <table>
+                <tr>
+                    <th colspan="2">Drinks</th>
+                </tr>
+                <tr>
+                    <td>Type:</td>
+                    <td>
+                        <select name="drink_type">
+                            <option value="cola">Cola</option>
+                            <option value="lemonade">Lemonade</option>
+                            <option value="iced_tea">Iced Tea</option>
+                            <option value="water">Water</option>
+                            <option value="coffee">Coffee</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Size:</td>
+                    <td>
+                        <div class="option-group">
+                            <input type="radio" name="drink_size" id="drink_small" value="small" checked>
+                            <label for="drink_small">Small</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="radio" name="drink_size" id="drink_medium" value="medium">
+                            <label for="drink_medium">Medium</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="radio" name="drink_size" id="drink_large" value="large">
+                            <label for="drink_large">Large</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quantity:</td>
+                    <td><input type="number" name="drink_qty" min="0" value="0" class="quantity-input"></td>
+                </tr>
+            </table>
+            
+        
+            
+            <!-- Feedback Section -->
+            <table>
+                <tr>
+                    <th colspan="2">Feedback</th>
+                </tr>
+                <tr>
+                    <td><label for="feedback">How can we improve our ordering form?</td></label>
+                    <td><textarea name="feedback" id="feedback" placeholder="what's your thought about us"></textarea></td>
+                </tr>
+            </table>
+            
+                <!-- Delivery Options -->
+                <table>
+                  <tr>
+                      <th colspan="2">Delivery Options</th>
+                  </tr>
+                  <tr>
+                      <td>Delivery Method:</td>
+                      <td>
+                          <div class="option-group">
+                              <input type="radio" name="delivery_method" id="delivery" value="delivery" checked>
+                              <label for="delivery">Delivery</label>
+                          </div>
+                          <div class="option-group">
+                              <input type="radio" name="delivery_method" id="pickup" value="pickup">
+                              <label for="pickup">Pick-up</label>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+            <!-- Submit Buttons -->
+            <div class="btn-container">
+                <button type="submit" class="btn">Submit Order</button>
+                <button type="reset" class="btn">Clear Form</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
